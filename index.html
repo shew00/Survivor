@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survivor Vue Version</title>
+  <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+  <script src="Script/vue.min.js"></script>
+  <link rel="stylesheet" href="Stylesheet/survivor.css">
+</head>
+<body>
+    <div id="app">
+      <div class="opButtons">
+        <span class="classOptions" @click="showOptions=!showOptions"><img src="Image/student.png" alt="Survivor options" /></span><br/>
+        <span class="classOptions" @click="undoDebounce()"><img src="Image/undo.png" alt="Undo last click" /></span>
+      </div>
+        <div v-show="showOptions" class="options" v-cloak>
+            <h2 class="optionsHeader">Student Data Source</h2>
+            <div class="col">
+                <h2>From Local Storage</h2>
+                <label>Load Results:</label>
+                <select v-model.lazy="localStorageItem" @change="loadFromLocalStorage()">
+                  <option v-for="lsItem in localStorageItemList">{{lsItem}}</option>
+                </select><br>
+                <input type="text" v-model.lazy="pageName" placeholder="New Page Name" />
+                <span class="saveButton" @click="submitToLocalStorage()">Save Page</span>
+            </div>
+            <div class="col">
+                <h2>From Class Mgr</h2>
+                <label>Class:</label>
+                <select v-model.lazy="curClass" @change="newClassSelected()">
+                  <option v-for="(value, key) in classes" :value="key">{{value}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <h2>From Typed List</h2>
+                <textarea v-model.lazy="typedList" placeholder="Type names separated by commas"></textarea>
+                <span class="saveButton" @click="submitList()">Use List</span>
+            </div>
+        </div>
+        <div align="center">
+            <img src="Image/survivor.png" alt="Survivor logo" width="300" height="126" /><br>
+            <student v-for="(student,index) in students" :name="student.name" :strikes="student.strikes" :id="index" :is-out="student.isOut"></student>
+        </div>
+    </div>
+    <script src="Script/VueScript.js"></script>
+</body>
+</html>

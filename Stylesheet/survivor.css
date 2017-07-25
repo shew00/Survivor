@@ -1,0 +1,130 @@
+:root 
+{
+  --options-color1: #fae4bd;
+  --options-color2: #eac380;
+  --save-color1: #f6b33d;
+  --save-color2: #d29105; 
+}
+body
+{
+    background-color: white;
+}
+.strikes
+{
+    font-size: x-large;
+    color: firebrick;
+    font-weight: 700;
+    font-family: Tahoma, sans-serif;
+    min-height: 1em;
+}
+
+.student
+{
+    border: 2px solid green;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: large;
+    background-color: lightgreen;
+    color: black;
+    box-shadow: 4px 4px 8px gray;
+    cursor: pointer;
+}
+.student:active:not(.out)
+{
+	position:relative;
+	top:1px;
+}
+.out
+{
+    border: 2px solid red;
+    background-color: pink;
+    color: gray;
+    box-shadow: none;
+    cursor: default;
+}
+.classOptions {
+	box-shadow:inset 0px 1px 0px 0px #fcf8f2;
+	background: linear-gradient(to bottom, var(--options-color1), var(--options-color2) );
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border-bottom-left-radius:5px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	height:52px;
+	width:52px;
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+.classOptions:hover {
+	background: linear-gradient( to bottom, var(--options-color2), var(--options-color1));
+}
+.classOptions:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+.options {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, var(--options-color1), var(--options-color2) );
+    padding: 1em;
+    overflow: auto;
+}
+.optionsHeader {
+    color: #080808;
+    margin-top: 0px;
+    text-shadow: 2px 2px 2px #949494;
+}
+.col {
+    float: left;
+    width: 31%;
+    border-right: 1px solid black;
+    padding: 4px;
+}
+.col h2 {
+    color: #8B2323;
+    margin-top: 0px;
+    font-size: 14pt;
+}
+.saveButton {
+	box-shadow:inset 0px 1px 0px 0px #fed897;
+	background: linear-gradient( to bottom, var(--save-color1), var(--save-color2));
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #eda933;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:100px;
+	text-align:center;
+	text-shadow:1px 1px 0px #cd8a15;
+  cursor: pointer;
+}
+.saveButton:hover {
+	background: linear-gradient( to bottom, var(--save-color2), var(--save-color1));
+}
+.saveButton:active {
+	position:relative;
+	top:1px;
+  cursor: pointer;
+}
+.opButtons {
+  float: right;
+}
+[v-cloak] {
+  display: none;
+}
+/* This button was generated using CSSButtonGenerator.com */
+
